@@ -18,7 +18,7 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(tweet:(NSDictionary *)options
                   callback: (RCTResponseSenderBlock)callback)
 {
-  if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+  //if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
     NSString *serviceType = SLServiceTypeTwitter;
     SLComposeViewController *composeCtl = [SLComposeViewController composeViewControllerForServiceType:serviceType];
     
@@ -51,16 +51,16 @@ RCT_EXPORT_METHOD(tweet:(NSDictionary *)options
     
     UIViewController *ctrl = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     [ctrl presentViewController:composeCtl animated:YES completion: nil];
-  }
-  else{
-    callback(@[@"not_available"]);
-  }
+//  }
+ // else{
+ //   callback(@[@"not_available"]);
+ // }
 }
 
 RCT_EXPORT_METHOD(shareOnFacebook:(NSDictionary *)options
                   callback: (RCTResponseSenderBlock)callback)
 {
-  if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+  //if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
     NSString *serviceType = SLServiceTypeFacebook;
     SLComposeViewController *composeCtl = [SLComposeViewController composeViewControllerForServiceType:serviceType];
     
@@ -93,10 +93,10 @@ RCT_EXPORT_METHOD(shareOnFacebook:(NSDictionary *)options
     
     UIViewController *ctrl = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     [ctrl presentViewController:composeCtl animated:YES completion: nil];
-  }
-  else{
-    callback(@[@"not_available"]);
-  }
+  //}
+  //else{
+  //  callback(@[@"not_available"]);
+  //}
 }
 
 
